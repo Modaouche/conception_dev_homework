@@ -1,38 +1,85 @@
-# sv
+# Lovable Svelte Generator
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A minimal tool that transforms natural-language prompts into client-only Svelte pages, with the ability to iterate via conversation and undo previous iterations.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Natural Language to Svelte**: Generate Svelte components by describing what you want in plain English
+- **Conversational Refinement**: Iteratively improve your components through conversation
+- **Undo Functionality**: Jump back to previous versions of your generated components
+- **Code Viewer**: See the generated Svelte code alongside the rendered result
+- **Client-Only**: All processing happens in the browser with your own API key
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Setup
 
-# create a new project in my-app
-npx sv create my-app
-```
+### Prerequisites
 
-## Developing
+- Node.js (v18 or later recommended)
+- npm or bun
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Installation
 
-```sh
-npm run dev
+1. Clone this repository:
+   ```bash
+   git clone <repository-url>
+   cd lovable-svelte-generator
+   ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
 
-## Building
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   bun run dev
+   ```
 
-To create a production version of your app:
+4. Open your browser and navigate to `http://localhost:5173`
 
-```sh
+### API Key
+
+This application requires an OpenAI API key to function. The key is used to generate Svelte code from your natural language prompts.
+
+- You'll need to provide your own OpenAI API key
+- The key is stored only in your browser's localStorage and never sent to any server
+- You can get an API key from [OpenAI's platform](https://platform.openai.com/api-keys)
+
+## Usage
+
+1. Enter your OpenAI API key in the provided field
+2. Type a natural language prompt describing the Svelte component you want to create
+   - Example: "Create a simple todo list app with the ability to add, complete, and delete tasks"
+3. Submit your prompt and wait for the component to be generated
+4. View the generated component and its code
+5. Refine the component by continuing the conversation
+   - Example: "Add a dark mode toggle to the todo list"
+6. Use the component history to navigate between different versions or undo to a previous version
+
+## Deployment
+
+To build the application for production:
+
+```bash
 npm run build
+# or
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+The built application will be in the `build` directory and can be deployed to any static hosting service.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Limitations
+
+- The quality of generated components depends on the OpenAI model's capabilities
+- Complex components may require multiple iterations to refine
+- The application uses the OpenAI API which has usage costs associated with it
+- Generated components are limited to what can be done with client-side Svelte (no server-side functionality)
+- The application requires a modern browser with JavaScript enabled
+
+## License
+
+[MIT](LICENSE)

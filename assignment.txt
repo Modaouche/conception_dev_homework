@@ -1,0 +1,68 @@
+Frontend Developer Take-Home Design
+Assignment - Conception
+
+I - Introduction & Context
+
+About This Assignment
+At Conception, we believe the best way to evaluate someone's ability is seeing them work in
+real conditions. Our process includes a take-home technical assignment that requires
+non-negligible time investment, but reflects our philosophy: we prioritize evaluating actual job
+skills over theoretical off topic performance.
+This assignment focuses on building a simplified version of what we do at Conception -
+creating systems that bridge the gap between ideas and functional interfaces. It gives you
+space for deep thinking and technical work similar to what you would do with us.
+
+
+II - The Challenge
+
+Problem Statement
+Build a minimal "Lovable-style" tool that transforms natural-language prompts into
+client-only (aka no backend required but logic can live in the client, including using local
+storage) Svelte pages, with the ability to iterate via conversation and undo the previous
+iteration. (We focus internally on prompt-to-wireframe and wireframe-to-website workflows,
+but this lets us evaluate similar competencies).
+
+Technical Requirements
+●Framework: App built in Svelte (SvelteKit is acceptable).
+●Output: Generated pages in Svelte (a single .svelte file is fine). No backend is
+required for generated pages.
+●Execution model: Client-only. Any LLM calls happen from the browser with a
+user-supplied API key. (Store locally; do not ship your key.)
+●Iteration: Conversational refinement of the generated page.
+●Undo: Ability to jump back to the previous generated version (state + code).
+●(Optional) Code viewer: View the generated code alongside the rendered result.
+
+DX: One-command local run and deployment
+
+Deliverable:
+● Working application (code + deployment instructions)
+● 3-5 minutes Loom video demonstrating functionality
+● A short README explaining setup, how the API key is used, and any limitations.
+
+
+III - Evaluation Criteria
+
+Technical Implementation (60%)
+●Code quality, organization, and architecture
+●Build system
+●State management and undo functionality
+●Performance and responsiveness
+  Deployment simplicity AI Integration (20%)
+●Prompt interpretation and code generation
+●Error handling and edge cases
+
+User Experience (20%)
+● Interface design and usability
+● Demo quality and presentation
+● Overall solution elegance
+
+
+IV - Constraints & Guidelines
+
+Code Standards:
+➔ You MUST be able to explain and justify every line of code
+➔ If using AI assistance, ensure full understanding; avoid code that feels
+auto-generated or unexplained.
+➔ Keep the codebase clean, readable, and documented (comments where it
+matters, concise README).
+
